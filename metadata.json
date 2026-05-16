@@ -1,0 +1,6 @@
+{
+  "name": "Remix: Payroll App",
+  "description": "A comprehensive payroll and financial management dashboard with distinct subdomain-style page routing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
