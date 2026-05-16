@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --sidebar-bg: #0f172a;
+  --sidebar-hover: rgba(255, 255, 255, 0.05);
+  --accent-primary: #6366f1;
+}
+
+body {
+    @apply bg-slate-50 font-sans text-slate-900;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #e2e8f0;
+    border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #cbd5e1;
+}
+
+/* Navigation Styles */
+.nav-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-400 transition-all no-underline;
+}
+
+.nav-link:hover {
+    @apply bg-white/5 text-white;
+}
+
+.nav-link.active {
+    @apply bg-indigo-600 text-white shadow-lg shadow-indigo-500/20;
+}
+
+.nav-link.active i {
+    @apply text-white;
+}
+
+/* Submenu Styles */
+.submenu .nav-link {
+    @apply pl-6 text-xs;
+}
+
+/* Page Animations */
+.animate-in {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slide-in-from-bottom {
+    from { transform: translateY(20px); }
+    to { transform: translateY(0); }
+}
+
+.fade-in { animation-name: fade-in; }
+.slide-in-from-bottom { animation-name: slide-in-from-bottom; }
+
+/* Dashboard Cards */
+.card-scale {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.card-scale:hover {
+    transform: scale(1.02);
+}
+
+/* Money Blur Effect */
+.salary-value.blurred {
+    filter: blur(8px);
+    transition: filter 0.3s ease;
+}
+
+.font-black { font-weight: 800; }
+.italic { font-style: italic; }
+
+/* Subdomain badge style */
+.subdomain-badge {
+    @apply text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full bg-slate-100 text-slate-500 border border-slate-200 flex items-center gap-2;
+}
